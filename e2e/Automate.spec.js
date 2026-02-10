@@ -5,7 +5,11 @@ import { chromium } from "playwright";
 test('Automate first',async ({page}) => {
   
   const  adurl ='https://automationexercise.com/#google_vignette'
-  const page_url = page.url()
+  const page_url =await  page.url()
+  if (page_url == adurl){
+    console.log(page_url)
+
+  }
 
   await page.goto('https://automationexercise.com/');
   await expect(page).toHaveTitle(/Automation/)
